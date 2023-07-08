@@ -7,6 +7,10 @@ WORKDIR /app
 # Clone the GitHub repository
 RUN git clone https://github.com/dassadi/spam-ham-classifier.git .
 
+# Download the NLTK resource
+RUN python -m nltk.downloader punkt
+
+
 # Install the required Python packages
 RUN pip install --no-cache-dir -r requirements.txt
 
